@@ -2,7 +2,9 @@
 Desktop web user interface using Flask APP as backend.
 
 ## Install
+```shell
 pip install git+https://github.com/jamofer/flask-desktop-ui.git
+```
 
 ## Usage
 ```python
