@@ -1,7 +1,6 @@
 from threading import Thread
 
-import chromium_browser
-
+from flask_desktop_ui import chromium_browser_wrapper
 
 LOCAL_HOST = '127.0.0.1'
 FLASK_PORT = 62191
@@ -14,10 +13,6 @@ class FlaskDesktopUI(object):
 
     def run(self):
         self.flask_job.start()
-        chromium_browser.initialize()
-        chromium_browser.open_url('http://{ip}:{port}'.format(ip=LOCAL_HOST, port=FLASK_PORT))
-        chromium_browser.message_loop()
-
-
-def default_page():
-    return 'Define a rule for "/" in your flask APP'
+        chromium_browser_wrapper.initialize()
+        chromium_browser_wrapper.open_url('http://{ip}:{port}'.format(ip=LOCAL_HOST, port=FLASK_PORT))
+        chromium_browser_wrapper.message_loop()

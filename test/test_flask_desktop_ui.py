@@ -9,9 +9,9 @@ import flask_desktop_ui
 
 class TestFlaskDesktopUI(unittest.TestCase):
     def setUp(self):
-        self.initialize = patch('chromium_browser.initialize').start()
-        self.open_url = patch('chromium_browser.open_url').start()
-        self.message_loop = patch('chromium_browser.message_loop').start()
+        self.initialize = patch('flask_desktop_ui.chromium_browser_wrapper.initialize').start()
+        self.open_url = patch('flask_desktop_ui.chromium_browser_wrapper.open_url').start()
+        self.message_loop = patch('flask_desktop_ui.chromium_browser_wrapper.message_loop').start()
 
     def tearDown(self):
         patch.stopall()
